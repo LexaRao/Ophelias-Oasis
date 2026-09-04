@@ -1,0 +1,28 @@
+{
+  "id": "ab152a22-d9b4-4a62-886f-5edf3b0bb09b",
+  "version": "2.0",
+  "name": "Ophelias Oasis",
+  "url": "",
+  "tests": [{
+    "id": "76118142-daf0-4bb5-a87e-9fad439bae09",
+    "name": "Test-Interface",
+    "commands": [{
+      "id": "3ad3f666-a488-45aa-a4e1-1a35e57da9d9",
+      "comment": "Run the start program command with the start command.",
+      "command": "run",
+      "target": "start",
+      "targets": [],
+      "value": "Hello"
+    }]
+  }],
+  "suites": [{
+    "id": "3d063d78-2980-4566-a03a-522d1e53edf5",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["76118142-daf0-4bb5-a87e-9fad439bae09"]
+  }],
+  "urls": [],
+  "plugins": []
+}
