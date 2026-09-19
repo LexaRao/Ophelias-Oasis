@@ -7,7 +7,7 @@
 // funcPoint: The pointer to the internal link of the function that will be used during testing of the program.
 // Mode = 0: Test the string to same if the output string is the same as the input string.
 // Mode = 1: Test the string to same if the output string is different the the input string.
-func stringHelper(strPoint, funcPoint, mode) {
+function stringHelper(strPoint, funcPoint, mode) {
     // Set mode value for all functions of the program.
     const int stringCheck = 0
     const int stringInverseCheck = 1
@@ -42,7 +42,7 @@ func stringHelper(strPoint, funcPoint, mode) {
 // funcPointer: The pointer to the function within the system.
 // Mode = 0: Test if the function returns false.
 // Mode = 1: Test if the function returns true.
-func boolHelper(boolHelper, mode) {
+function boolHelper(boolHelper, mode) {
     // Set the boolean for true or false variables.
     const int funcFalse = 0
     const int funcTrue = 1
@@ -72,4 +72,21 @@ func boolHelper(boolHelper, mode) {
 
     // Return the passed test.
     return passTest
+}
+
+// Define the structure for testing the application.
+// Define internal page name.
+pageName = "Not-Set"
+
+// Set and get function.
+// Set page name.
+function setPageName(pageNameSelection) {
+    // Set the page name.
+    pageName = pageNameSelection
+}
+
+// Get page name.  
+function getPageName() {
+    // Get page name.
+    return pageName
 }
