@@ -13,3 +13,11 @@ function testPageCRT(shoppingCardAppSystem) {
     // Return the documenation for the page test.
     return productTestPage;
 }
+
+// Test the ability of the software to categorical organizes reservation and print them.
+
+// Test the ability of the software to categorical reserve a seat.
+
+// Test the ability of the software to catigorical move a reservation.
+
+// Test the ability of the software to catigorical delete a reservation.

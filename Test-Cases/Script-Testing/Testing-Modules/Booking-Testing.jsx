@@ -13,3 +13,11 @@ function testPageBOT(shoppingCardAppSystem) {
     // Return the data for the page tests.
     return pageTests;
 }
+
+// Test the ability of the software to create a new booking entry.
+
+// Test the ability of the software to delete a old booking entry.
+
+// Test the ability of the software to move a booking entry.
+
+// Test the ability of the software to schedule a new booking entry.

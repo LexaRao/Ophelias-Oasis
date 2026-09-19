@@ -13,3 +13,9 @@ function pageTestDSRT(shoppingCardAppSystem) {
     // Return the value for the page test.
     return pageTestSummmery;
 }
+
+// Test the ability of the software to report the data saving policies.
+
+// Test the abiliy of the software to change the data saving policies.
+
+// Test the integrity of the data saving policies on the sandboxing of the system software.

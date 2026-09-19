@@ -13,3 +13,7 @@ function testPageCRRT(shoppingCardAppSystem) {
     // Return the data of the page testing.
     return pageTesting;
 }
+
+// Test the ability of the software to change the rate reported for testing.
+
+// Test the ability of the software to report the rate reported correctly in the testing environment.

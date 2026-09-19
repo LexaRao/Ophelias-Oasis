@@ -13,3 +13,17 @@ function testPageBT(shoppingCardAppSystem) {
     // Determine if we can return the old value.
     return targetPass;
 }
+
+// Test backup create for the software.
+
+// Test backup dates for the software.
+
+// Test older backup history for the software.
+
+// Test layout of the commandline environement for the software.
+
+// Test the ability to display help menu for the software.
+
+// Test the ability for the software to store new files.
+
+// Test the ability for the software to delete old backups.

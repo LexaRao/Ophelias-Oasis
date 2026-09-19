@@ -19,3 +19,15 @@ function pageTestDAT(shoppingCardAppSystem) {
     // Return the values within this function.
     return pageTestSuccess;
 }
+
+// Test the ability the software to enable accomdation within the platform.
+
+// Test the ability of the software to deleted accomdation on the platform.
+
+// Test the testing environment to make sure it is able to interface will all the required modules for the program to run correctly.
+
+// Test the ability of the software to use different forms of accomdation when they are enabled.
+
+// Test speach to text.
+
+// Test text to speach.

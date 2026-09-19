@@ -16,3 +16,11 @@ function testPageABRT(shoppingCardAppSystem) {
     // Return if the target passed or failed the test.
     return targetPass;
 }
+
+// Test the ability for the software to print out report with given values set.
+
+// Test the ability for the software to change accomdation billing reports.
+
+// Test the ability for the software to recover a history of the accomadation report.
+
+// Test the ability for the software to display menu advise and help menu for the accomdation report.
