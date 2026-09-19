@@ -18,3 +18,11 @@ function pageTestDT(shoppingCardAppSystem) {
     // Determine the current summery tests.
     return summaryTests;
 }
+
+// Test the software ability to display a logo.
+
+// Test the ability for the software to modify a logo for the user.
+
+// Test the ability for the user to hid the logo.
+
+// Test the ability for the software to unhid the logo.

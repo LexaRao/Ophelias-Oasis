@@ -13,3 +13,11 @@ function pageTestPT(shoppingCardAppSystem) {
     // Return the required values.
     return pageNameSummery;
 }
+
+// Check the ability of the software to read the user profile.
+
+// Check the ability of the software to write to the user profile.
+
+// Check the ability of the software to modify the user profile.
+
+// Check the ability of the software to deleate the user profile.  

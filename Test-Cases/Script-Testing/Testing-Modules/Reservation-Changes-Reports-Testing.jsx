@@ -13,3 +13,7 @@ function pageNameRCRT(shoppingCardAppSystem) {
     // Return the value if it is correct.
     return pageNameSelection;
 }
+
+// Test the ability of the software to change a reported reservation.
+
+// Test the ability of the software to deleate a reported reservation.  

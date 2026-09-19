@@ -13,3 +13,7 @@ function pageTestQRCCT(shoppingCardAppSystem) {
     // Determine the correct pages to return.
     return pageNameSummery;
 }
+
+// Check the ability of the software to display a confirmation code for the QR.
+
+// Test the software ability to mimimize a currently displayed QR code.  

@@ -13,3 +13,11 @@ function pageTestRPRT(shoppingCardAppSystem) {
     // Return the required values.
     return pageNameSummery;
 }
+
+// Test the ability of the software to report the pricing of a reservation.
+
+// Test the ability of the software to change the pricing of a reservation.
+
+// Test the ability of the software to deleate the pricing of a reservation.
+
+// Test the ability of the software to add a reported reservation pricing.  

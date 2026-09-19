@@ -13,3 +13,13 @@ function testPageECRT(shoppingCardAppSystem) {
     // Return the correct output of the page test.
     return pageTestSummary;
 }
+
+// Test to send email confirmation reports to the users.
+
+// Test to receive a confirmation report from users.
+
+// Test the systems to make sure it is displaying the correct confirmation report.
+
+// Test the system to make sure it is displaying the correct date and time and user for the confirmation message.
+
+// Make sure SMPServer is running correct on the system deamon.

@@ -13,3 +13,11 @@ function pageTestRRT(shoppingCardAppSystem) {
     // Return the required value for the page summery.
     return pageNameSummery;
 }
+
+// Test the ability of the software to record retainment testing.
+
+// Test the ability of the software to modify retainment testing.
+
+// Test the ability of the software to deleate retainment testing.
+
+// Test the ability of the software to view retaimenent testing.  

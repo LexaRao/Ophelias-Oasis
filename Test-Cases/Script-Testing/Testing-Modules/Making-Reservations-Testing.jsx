@@ -13,3 +13,9 @@ function pageTestMRT(shoppingCardAppSystem) {
     // Determine the value for page summery.
     return pageTestSummery;
 }
+
+// Test the ability for the software to make a reservation.
+
+// Test the ability for the software to move a reservation.
+
+// Test the ability for the software to delete a reservation.

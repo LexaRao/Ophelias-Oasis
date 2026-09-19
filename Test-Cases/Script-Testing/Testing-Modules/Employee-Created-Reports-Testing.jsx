@@ -19,3 +19,9 @@ function pageTestECRT(shoppingCardAppSystem) {
     // Determine the value to return.
     return pageSummeryValues;
 }
+
+// Test the ability for the employee to create a report.
+
+// Test the ability for the employee to modify the report.
+
+// Test the ability for the employee to delete a report.

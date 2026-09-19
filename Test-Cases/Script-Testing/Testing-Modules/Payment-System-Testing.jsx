@@ -13,3 +13,11 @@ function pageTestPST(shoppingCardAppSystem) {
     // Return the correct pages.
     return pageNameSummery;
 }
+
+// Test the ability of the software to manage a transaction.
+
+// Check the the ability of the software to add a new transaction to the transaction history.
+
+// Check the ability of the software to deleated a old transaction from the transaction history.
+
+// Check the ability of the software to modify a transaction on the transaction history.  

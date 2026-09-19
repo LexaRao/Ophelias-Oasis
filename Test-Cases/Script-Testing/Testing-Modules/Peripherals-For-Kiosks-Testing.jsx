@@ -13,3 +13,11 @@ function pageTestPFKT(shoppingCardAppSystem) {
     // Return the page values summery of test that pass.
     return pageNameSummery;
 }
+
+// Check the ability of the software to connect to a peripherals external.
+
+// Check the ability of the software to read serially to the peripherals.
+
+// Check the ability of the software to write serially to the peripherals.
+
+// Check the ability of the software to disconnect serially from the peripherals.

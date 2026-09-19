@@ -18,3 +18,11 @@ function pageTestOTRT(shoppingCardAppSystem) {
     // Return the correct values from the list using the correct summmery  of values.
     return pageNameSummery;
 }
+
+// Test the ability of the software track the amount of supply of the product.
+
+// Test the ability of the software to delete the amount of supply of the product.
+
+// Test the ability of the software to change the amount of supply of a product.
+
+// Test the ability of the software to add the amount of supply of the product to a list of the product supply.
