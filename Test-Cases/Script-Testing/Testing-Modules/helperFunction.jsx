@@ -9,9 +9,9 @@
 // Mode = 1: Test the string to same if the output string is different the the input string.
 function stringHelper(strPoint, funcPoint, mode) {
     // Set mode value for all functions of the program.
-    const int stringCheck = 0;
-    const int stringInverseCheck = 1;
-    const int multiTestingMode = 2;
+    const stringCheck = 0;
+    const stringInverseCheck = 1;
+    const multiTestingMode = 2;
 
     // Define the functionality for mode 0.
     if (mode == stringCheck) {
@@ -55,8 +55,8 @@ function stringHelper(strPoint, funcPoint, mode) {
 // Mode = 1: Test if the function returns true.
 function boolHelper(boolHelper, mode) {
     // Set the boolean for true or false variables.
-    const int funcFalse = 0
-    const int funcTrue = 1
+    const funcFalse = 0
+    const funcTrue = 1
 
     // Define the funcitonality for mode 0.
     if (mode == funcFalse) {
@@ -106,7 +106,7 @@ function getPageName() {
 function pageTest(pageName, functPointer) {
     // Set testing mode.
     const testingMode = 0;
-    const multiTestingMode 2;
+    const multiTestingMode = 2;
 
     // Determine the length of the test.
     testLength = functPointer().length

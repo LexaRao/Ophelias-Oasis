@@ -6,10 +6,10 @@ import "helperFunction.jsx";
 // Create the function for testing if we are in the correct page.
 function pageTestDAT(shoppingCardAppSystem) {
     // Determine if the test is on the correct page.
-    let pageNameVal = {"Browse Products", "Log in the app", "Pay for items in cart", "Complete checkout", "Verify email and password"};
+    let pageNameVal = ["Browse Products", "Log in the app", "Pay for items in cart", "Complete checkout", "Verify email and password"];
     
     // Define the successful page tests.
-    let pageTestSuccess = {"", "", "", "", "", ""};
+    let pageTestSuccess = ["", "", "", "", "", ""];
 
     // Determine if the accomdation testing functions is on the correct pages.
     for (valueStringIndex in pageNameVal) {
