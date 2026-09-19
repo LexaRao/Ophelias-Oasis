@@ -5,14 +5,14 @@ import "helperFunction.jsx";
 // Located under the page complete checkout.
 function testPageABRT(shoppingCardAppSystem) {
     // Get the page name.
-    targetString = "Complete checkout"
+    let targetString = "Complete checkout";
     
     // Set testing mode.
-    testingMode = 0
+    let testingMode = 0;
 
-    // Determine if the page name is tne same as what we are checking.
-    targetPass = stringHelper(targetString, shoppingCardAppSystem.getPageName, testingMode)
+    // Determine if the page name is the same as what we are checking.
+    targetPass = stringHelper(targetString, shoppingCardAppSystem.getPageName, testingMode);
 
     // Return if the target passed or failed the test.
-    return targetPass
+    return targetPass;
 }

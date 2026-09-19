@@ -82,11 +82,23 @@ pageName = "Not-Set"
 // Set page name.
 function setPageName(pageNameSelection) {
     // Set the page name.
-    pageName = pageNameSelection
+    pageName = pageNameSelection;
 }
 
 // Get page name.  
 function getPageName() {
     // Get page name.
-    return pageName
+    return pageName;
+}
+
+// Define the page test function.
+function pageTest(pageName, functPointer) {
+    // Set testing mode.
+    const testingMode = 0;
+
+    // Target pass for the string helper function.
+    let testFunction = stringHelper(pageName, functPointer, testingMode);
+
+    // Return the value for testing the function.
+    return testFunction;
 }
