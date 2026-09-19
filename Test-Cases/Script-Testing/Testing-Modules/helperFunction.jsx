@@ -9,8 +9,9 @@
 // Mode = 1: Test the string to same if the output string is different the the input string.
 function stringHelper(strPoint, funcPoint, mode) {
     // Set mode value for all functions of the program.
-    const int stringCheck = 0
-    const int stringInverseCheck = 1
+    const int stringCheck = 0;
+    const int stringInverseCheck = 1;
+    const int multiTestingMode = 2;
 
     // Define the functionality for mode 0.
     if (mode == stringCheck) {
@@ -24,13 +25,23 @@ function stringHelper(strPoint, funcPoint, mode) {
         const passTest = expectedOutput.toBe(funcPoint)
     } else if (mode == stringInverseCheck) {
         // Define the funciton call using the pointer function.
-        cosnt importedFunc = require(funcPoint)
+        const importedFunc = require(funcPoint)
 
         // Define the function call for the function.
         const expectedOutput = expect(importedFunc)
 
-        // Check whether the funciton return the designed output.
+        // Check whether the function return the designed output.
         const passTest = !(expectedOutput.toBe(funcPoint))
+    } else if (mode == multiTestingMode) {
+        // Define the funciton call for using the pointer function.
+        const importedFunc = require(funcPoint);
+
+        // Define the function call for the funciton.
+        const expectOutput = expect(importedFunc);
+        
+        // Define whether the function return the designed output.
+        // Source: The source for testing multiple function is "https://jestjs.io/docs/mock-functions".
+        const passTest = expectedOutput.toContainEqual([strPoint]);
     }
 
     // Return the passed test.
@@ -95,9 +106,22 @@ function getPageName() {
 function pageTest(pageName, functPointer) {
     // Set testing mode.
     const testingMode = 0;
+    const multiTestingMode 2;
+
+    // Determine the length of the test.
+    testLength = functPointer().length
+
+    // Set two testing values.
+    const valueTestLength = 1
+    const multiValueTest = 2
 
     // Target pass for the string helper function.
-    let testFunction = stringHelper(pageName, functPointer, testingMode);
+    if (testLength == valueTestLength) {
+        let testFunction = stringHelper(pageName, functPointer, testingMode);
+    // Determine if the value is of the multi value test.
+    } else { 
+        let testFunction = stringHelper(pageName, functPointer, multiTestingMode);
+    }
 
     // Return the value for testing the function.
     return testFunction;
