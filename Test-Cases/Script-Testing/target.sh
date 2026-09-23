@@ -1,4 +1,7 @@
-#!/bin/zsh
+#!/bin/sh
+
+# Install the required libraries for the project to work as intended.
+sudo apt-get install python3-pip
 
 # Target the testing substem for activation.
 echo "Target-Script: Targeting subsystem..."
