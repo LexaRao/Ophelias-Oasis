@@ -6,7 +6,7 @@ import "helperFunction.jsx";
 import "LexaRao/Ophelias-Oasis/Source/*.jsx";
 
 // Create the helper function for testing the page is correct.
-function testPageECRT(shoppingCardAppSystem) {
+function testPageECRTT(shoppingCardAppSystem) {
     // Test the function for testing if we are in the correct page.
     let pageTestValue = "Complete checkout";
 
@@ -18,7 +18,7 @@ function testPageECRT(shoppingCardAppSystem) {
 }
 
 // Define the function for the test email confirmation.
-function runTestECRT() {
+function runTestECRTT() {
     // Create a test summery of the tests.
     const testLength = 4;
     testSummary = vector(length=testLength);
