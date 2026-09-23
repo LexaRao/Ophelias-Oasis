@@ -168,6 +168,69 @@ function getExcelContent(excelName, functionName, functionColumn) {
 }
 
 // Define a helper function for extracting data from the Excel sheet and testing the function.
-function runTest(functionName) {
+function runTest(functionName, functionPointer) {
+    // Define required function for this system.
+    timeSheetFile = "LexaRao/Ophelias-Oasis/Test-Cases/Testing-Script-Records.xlsx" // Timesheet use cases. 
 
+    // Define constants for tracking the function parameters that we are tracking.  
+    const functionName = 'C';
+    const functionParameterNumber = 'E';
+    const parameterTypes = ['H', 'M', 'R', 'W', 'AB', 'AG', 'AL', 'AQ', 'AV', 'BA'];
+    const paremeterTestValues = ['J', 'O', 'T1', 'Y1', 'AD', 'AI', 'AN', 'AS', 'AX', 'BC'];
+    const outputType = 'BF';
+    const outputValue = 'BI';
+
+    // Set the target values for the test by getting all the required parameters and options in a lists.
+    listParameter = vector(length=10);
+    listTypes = vector(length=10);
+    listOutput = vector(length=1);
+
+    // Get the function parameter number for the code.
+    numberParameterTarget = int(getExcelContent(timeSheetFile, functionName, functionParameterNumber));
+
+    // Loop through all the parameters and gather the data from the requirements.  
+    for (i in Range(numberParameterTarget)) {
+        // Determine the parameter type and the test value type.
+        const columnTypes = parameterTypes[i];
+        const columnValues = paremeterTestValues[i];
+
+        // Gather list content.
+        listTypes[i] = getExcelContent(timeSheetFile, functionName, columnTypes);
+        listValues[i] = getExcelContent(timeSheetFile, functionName, columnValues);
+    }
+
+    // Get output function for data.  
+    const outputTypeValue = getExcelContent(timeSheetFile, functionName, outputType);
+    const outputValueValues = getExcelContent(timeSheetFile, functionName, outputValue);
+
+    // Max number of tests.
+    const maxNumberTest = 10;
+
+    // Test output.
+    testOutput = vector(length=maxNumberTest);
+
+    // Iteration through all test cases and determine if the target input cases matches the target output cases for the function.  
+    for (i in Range(maxNumberTest)) {
+        // Create two storage vectors.
+        const vectorValuesLinker = vector(length=maxNumberTest);
+        const vectorTypesLinker = vector(length=maxNumberTest);
+        
+        // Iteration trough each of the parameters and gather the correct values.
+        for (j in Range(numberParameterTarget)) {
+            // Gather both values.
+            vectorValuesLinker[j] = listTypes[j][i];
+            vectorTypesLinker[j] = listValues[j][i];
+        }
+
+        // Determine list target.  
+        const mode = 0;
+        const functionPointer = functionPointer(vectorValuesLinker);
+        const outputTarget = outputTypeValue[i];
+
+        // Test the target using the given data.
+        testOutput[i] = stringHelper(outputTarget, functionPointer, mode);
+    }
+
+    // Return the data for the target.  
+    return testOutput;
 }
