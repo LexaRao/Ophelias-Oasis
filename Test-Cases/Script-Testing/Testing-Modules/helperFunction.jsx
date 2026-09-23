@@ -1,4 +1,7 @@
 // Define the helper function.
+// Define required function for this system.
+timeSheetFile = "LexaRao/Ophelias-Oasis/Test-Cases/Testing-Script-Records.xlsx" // Timesheet use cases. 
+
 // Source: "https://www.youtube.com/watch?v=IPiUDhwnZxA" used for understanding the layout of the jest funcitonality.
 
 // Define the function for the strings.
@@ -127,12 +130,44 @@ function pageTest(pageName, functPointer) {
     return testFunction;
 }
 
-// Source: https://www.npmjs.com/package/react-spread-sheet-excel.
+// Source: https://hatchjs.com/read-excel-in-react/.
 // Define a function for extracting a given function name out of the excel and return a list from it.  
 function getExcelContent(excelName, functionName, functionColumn) {
-    // Define the process of accessing the document.
+    // Target rows.  
+    nameLocTarget = 'C';
+
+    // Import the required libraries.
+    import {readFile} from 'exceljs';
+
+    // Define the process of accessing the document.  
+    const workbook = await readFile(excelName);
+
+    // Record errors from reading file.
+    const sheet = workbook.getSheet('Funtion-Database');
+
+    // Load the data into the data system.
+    const data = sheet.getData()
+
+    // Set a varible for the target variable. 
+    targetVar = "Data unavalable.";
     
+    // Return the correct value using a for loop.
+    for (i in data) {
+        // If the value for the function name matches return the correct data for the colume.
+        if (data[nameLocTarget][i] == functionName) {
+            // Determine the correct value.  
+            targetVar = data[functionColumn][i];
+        }
+    }
+
+    // Split the value into a list.
+    targetList = targetVar.split(',');
+
+    // Return the data.
+    return targetList;
 }
 
-
 // Define a helper function for extracting data from the Excel sheet and testing the function.
+function runTest(functionName) {
+
+}
