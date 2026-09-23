@@ -2,6 +2,9 @@
 // Determine the correct value to import.
 import "helperFunction.jsx";
 
+// Note: Import all the target values from the repository of code that are required for the code to work.  Configure this to verify you project is importing all the test code functions.
+import "LexaRao/Ophelias-Oasis/Source/*.jsx";
+
 // Create the function for testing if the correct pages are imported.
 function pageTestPT(shoppingCardAppSystem) {
     // Determine the correct pages.
@@ -14,10 +17,24 @@ function pageTestPT(shoppingCardAppSystem) {
     return pageNameSummery;
 }
 
-// Check the ability of the software to read the user profile.
+// Determine the function ability to run the test for PT.
+function runTestPT() {
+    // Check the ability for the vector to assign new values.  
+    const testSummeryLength = 4;
+    testSummery = vector(length=testSummeryLength);
 
-// Check the ability of the software to write to the user profile.
+    // Check the ability of the software to read the user profile.  
+    testSummery[0] = runTest("readUserProfile", readUserProfile);
 
-// Check the ability of the software to modify the user profile.
+    // Check the ability of the software to write to the user profile.
+    testSummery[1] = runTest("writeUserProfile", writeUserProfile);
 
-// Check the ability of the software to deleate the user profile.  
+    // Check the ability of the software to modify the user profile.
+    testSummery[2] = runTest("modifyUserProfile", modifyUserProfile);
+
+    // Check the ability of the software to deleate the user profile.
+    testSummery[3] = runTest("deleteUserProfile", deleteUserProfile);  
+
+    // Run test to return the values.  
+    return testSummery;
+}

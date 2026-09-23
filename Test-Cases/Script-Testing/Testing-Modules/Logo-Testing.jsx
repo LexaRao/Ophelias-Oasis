@@ -2,6 +2,9 @@
 // Import the required libraries.
 import "helperFunction.jsx";
 
+// Note: Import all the target values from the repository of code that are required for the code to work.  Configure this to verify you project is importing all the test code functions.
+import "LexaRao/Ophelias-Oasis/Source/*.jsx";
+
 // Create the function for page testing.
 function pageTestDT(shoppingCardAppSystem) {
     // The function the label for the correct windows.
@@ -19,10 +22,24 @@ function pageTestDT(shoppingCardAppSystem) {
     return summaryTests;
 }
 
-// Test the software ability to display a logo.
+// Define the function for running the test.
+function runTestDT() {
+    // Run testing summery value.
+    const testSummeryLength = 4;
+    testSummery = vector(length=testSummeryLength);
+    
+    // Test the software ability to display a logo.
+    testSummery[0] = runTest("displayLogo", displayLogo);
 
-// Test the ability for the software to modify a logo for the user.
+    // Test the ability for the software to modify a logo for the user.
+    testSummery[1] = runTest("modifyLogo", modifyLogo);
 
-// Test the ability for the user to hid the logo.
+    // Test the ability for the user to hid the logo.
+    testSummery[2] = runTest("hideLogo", hideLogo);
 
-// Test the ability for the software to unhid the logo.
+    // Test the ability for the software to unhid the logo.
+    testSummery[3] = runTest("showLogo", showLogo);
+
+    // Return testing summery.
+    return testSummery;
+}

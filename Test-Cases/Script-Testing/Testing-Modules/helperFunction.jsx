@@ -2,6 +2,9 @@
 // Define required function for this system.
 timeSheetFile = "LexaRao/Ophelias-Oasis/Test-Cases/Testing-Script-Records.xlsx" // Timesheet use cases. 
 
+// Note: Import all the target values from the repository of code that are required for the code to work.  Configure this to verify you project is importing all the test code functions.
+import "LexaRao/Ophelias-Oasis/Source/*.jsx";
+
 // Source: "https://www.youtube.com/watch?v=IPiUDhwnZxA" used for understanding the layout of the jest funcitonality.
 
 // Define the function for the strings.

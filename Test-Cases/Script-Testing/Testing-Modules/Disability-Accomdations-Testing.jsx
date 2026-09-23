@@ -3,6 +3,9 @@
 // Import the required libraries.
 import "helperFunction.jsx";
 
+// Note: Import all the target values from the repository of code that are required for the code to work.  Configure this to verify you project is importing all the test code functions.
+import "LexaRao/Ophelias-Oasis/Source/*.jsx";
+
 // Create the function for testing if we are in the correct page.
 function pageTestDAT(shoppingCardAppSystem) {
     // Determine if the test is on the correct page.
@@ -20,14 +23,26 @@ function pageTestDAT(shoppingCardAppSystem) {
     return pageTestSuccess;
 }
 
-// Test the ability the software to enable accomdation within the platform.
+// Test the runTest function.
+function runTestDAT() {
+    // Create a vector for storing the test summary.
+    testSummeryLength = 4;
+    testSummery = vector(length=testSummeryLength);
 
-// Test the ability of the software to deleted accomdation on the platform.
+    // Test the testing environment to make sure it is able to interface will all the required modules for the program to run correctly.
+    // Test the ability of the software to use different forms of accomdation when they are enabled.
+    // Test the ability the software to enable accomdation within the platform.
+    testSummery[0] = runTest("enableAccomdation", enableAccomdation);
 
-// Test the testing environment to make sure it is able to interface will all the required modules for the program to run correctly.
+    // Test the ability of the software to deleted accomdation on the platform.
+    testSummery[1] = runTest("deleteAccomdation", deleteAccomdation);
 
-// Test the ability of the software to use different forms of accomdation when they are enabled.
+    // Test speach to text.
+    testSummery[2] = runTest("speechToText", speechToText);
 
-// Test speach to text.
+    // Test text to speach.
+    testSummery[3] = runTest("textToSpeech", textToSpeech);
 
-// Test text to speach.
+    // Return the correct data.
+    return testSummery;
+}
