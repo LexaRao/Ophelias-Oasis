@@ -126,3 +126,13 @@ function pageTest(pageName, functPointer) {
     // Return the value for testing the function.
     return testFunction;
 }
+
+// Source: https://www.npmjs.com/package/react-spread-sheet-excel.
+// Define a function for extracting a given function name out of the excel and return a list from it.  
+function getExcelContent(excelName, functionName, functionColumn) {
+    // Define the process of accessing the document.
+    
+}
+
+
+// Define a helper function for extracting data from the Excel sheet and testing the function.

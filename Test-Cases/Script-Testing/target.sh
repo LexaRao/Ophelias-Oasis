@@ -7,3 +7,8 @@ source testingSubsystem/bin/activate
 # Update all required packages before using the system.
 echo "Target-Script: Updating required packages before boot."
 pip install --upgrade pip
+
+# Install required dependies.
+npm install update
+npm install react-spread-sheet-excel
+npm install jest
