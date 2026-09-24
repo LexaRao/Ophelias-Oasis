@@ -13,5 +13,5 @@ pip install --upgrade pip
 
 # Install required dependies.
 npm install update
-npm install react-spread-sheet-excel
+npm install exceljs
 npm install jest
