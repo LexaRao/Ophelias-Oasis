@@ -125,7 +125,7 @@ const config: Config = {
   // restoreMocks: false,
 
   // The root directory that Jest should scan for tests and modules within
-  // rootDir: undefined,
+  rootDir: "Ophelias-Oasis",
 
   // A list of paths to directories that Jest should use to search for files in
   // roots: [
@@ -174,7 +174,7 @@ const config: Config = {
   // testResultsProcessor: undefined,
 
   // This option allows use of a custom test runner
-  // testRunner: "jest-circus/runner",
+  testRunner: "jest-circus/runner",
 
   // A map from regular expressions to paths to transformers
   // transform: undefined,
