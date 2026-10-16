@@ -4,6 +4,7 @@ import NavBar from './NavBar';
 
 import Home from "./Home";
 import Reservation from './Reservation';
+import Signup from './SignUp';
 
 import './App.css'
 
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<NavBar />}>
             <Route path="/" element={<Home />} />
             <Route path="/reservation" element={<Reservation />} />
+            <Route path="/signUp" element={<Signup />} />
           </Route>
         </Routes>
       </BrowserRouter>
