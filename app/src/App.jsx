@@ -4,7 +4,8 @@ import NavBar from './NavBar';
 
 import Home from "./Home";
 import Reservation from './Reservation';
-import Signup from './SignUp';
+import SignUp from './SignUp';
+import LogIn from './LogIn';
 
 import './App.css'
 
@@ -19,7 +20,9 @@ function App() {
           <Route path="/" element={<NavBar />}>
             <Route path="/" element={<Home />} />
             <Route path="/reservation" element={<Reservation />} />
-            <Route path="/signUp" element={<Signup />} />
+            <Route path="/signUp" element={<SignUp />} />
+            <Route path="/logIn" element={<LogIn />} />
+
           </Route>
         </Routes>
       </BrowserRouter>
