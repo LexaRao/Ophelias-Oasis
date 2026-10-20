@@ -1,23 +1,137 @@
-#center {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-  place-content: center;
-  place-items: center;
-  flex-grow: 1;
-
-  @media (max-width: 1024px) {
-    padding: 32px 20px 24px;
-    gap: 18px;
-  }
+.page {
+  padding: 36px clamp(20px, 4vw, 64px);
 }
 
+.page-intro {
+  margin-bottom: 28px;
+}
 
+.page-intro > p:last-child {
+  max-width: 75ch;
+}
 
-#spacer {
-  height: 88px;
-  border-top: 1px solid var(--border);
-  @media (max-width: 1024px) {
-    height: 48px;
+.eyebrow {
+  margin-bottom: 12px;
+  color: var(--accent);
+  font-size: 13px;
+}
+
+.placeholder {
+  min-height: 300px;
+  padding: 32px;
+  border: 1px dashed var(--accent-border);
+  border-radius: 6px;
+  background: var(--surface);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.placeholder p {
+  margin: 0;
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin-top: 24px;
+}
+
+.page-note {
+  margin-top: 24px;
+}
+
+.preview-layout {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  min-height: 65vh;
+}
+
+.sidebar {
+  padding: 28px 20px;
+  border-right: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.sidebar h2 {
+  font-size: 20px;
+}
+
+.sidebar p {
+  font-size: 14px;
+}
+
+.sidebar nav {
+  display: grid;
+  gap: 6px;
+}
+
+.sidebar a {
+  padding: 9px 12px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.sidebar a.active {
+  background: var(--accent-bg);
+  color: var(--text-h);
+}
+
+.preview-content {
+  min-width: 0;
+}
+
+.preview-note {
+  margin: 0;
+  padding: 16px clamp(20px, 4vw, 64px);
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+}
+
+.purpose-note {
+  font-size: 14px;
+}
+
+.auth-form {
+  max-width: 480px;
+  display: grid;
+  gap: 18px;
+  margin-top: 24px;
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+.auth-form p {
+  margin: 0;
+}
+
+@media (max-width: 700px) {
+  .preview-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .sidebar nav {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .placeholder {
+    min-height: 240px;
+    padding: 24px 16px;
+  }
+
+  .auth-form {
+    padding: 20px;
   }
 }

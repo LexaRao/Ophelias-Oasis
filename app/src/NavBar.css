@@ -1,38 +1,95 @@
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    background-color: rgb(173, 167, 186);
-    padding: 16px 40px;
-
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px 24px;
+  align-items: center;
+  justify-content: space-between;
+  background: #f1edf6;
+  padding: 20px 28px;
+  border-bottom: 1px solid var(--border);
 }
-
-.links a{
-    color: black;
-    text-decoration: none;
-    transition: color 0.2s ease;
+.brand {
+  font-size: 22px;
+  font-weight: 600;
+  color: #17131c;
+  text-decoration: none;
 }
-
+.navbar .links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.links a {
+  display: block;
+  color: #17131c;
+  text-decoration: none;
+  font-size: 15px;
+  padding: 8px 0;
+}
+.links a.active {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
 .links a:hover {
-    color: blue;
+  color: #3e2859;
 }
-.navbar ul.links {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 30px;
-
-    list-style: none;
-    margin: 0;
-    padding: 0;
+.preview-bar {
+  padding: 14px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+  font-size: 13px;
 }
-
-.navbar ul.links li {
-    list-style: none;
+.preview-bar a {
+  padding: 7px 10px;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  text-decoration: none;
+}
+.preview-bar .button-row {
+  margin-top: 0;
+}
+.preview-bar a.active {
+  border-color: var(--accent-border);
+  background: var(--accent-bg);
+}
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: -100px;
+  padding: 12px;
+  background: var(--bg);
+  z-index: 10;
+}
+.skip-link:focus {
+  top: 12px;
+}
+footer {
+  padding: 24px 28px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  border-top: 1px solid var(--border);
+  font-size: 13px;
+}
+footer span {
+  margin-right: auto;
+}
+@media (max-width: 700px) {
+  .navbar,
+  .preview-bar,
+  footer {
+    padding: 16px;
+  }
+  .navbar .links {
+    gap: 4px 16px;
+  }
 }

@@ -1,16 +1,14 @@
-# React + Vite
+# Ophelia’s Oasis frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple React + Vite school-project template with public pages and guest/staff previews.
 
-Currently, two official plugins are available:
+From this folder, run:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```sh
+npm install
+npm run dev
+```
 
-## React Compiler
+Use Node 22.12 or newer. See the [page guide](PAGE_GUIDE.md) for the pages and files to edit.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Previews need no account. Existing login and signup use VITE_SUPABASE_URL and VITE_SUPABASE_PUBLISHABLE_KEY from your local .env.local file.
