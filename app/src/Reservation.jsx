@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import TemplatePage from "./components/TemplatePage";
+import ReservationForm from "./components/ReservationForm";
 
 export default function Reservation() {
   return (
@@ -8,6 +9,7 @@ export default function Reservation() {
       description="Guests will choose their dates and reservation plan, then provide booking details here."
       placeholder="Reservation form will go here"
     >
+      <ReservationForm />
       <p className="page-note">
         This is a layout placeholder. Booking and payment functionality will be
         added later.
