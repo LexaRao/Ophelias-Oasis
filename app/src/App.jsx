@@ -4,6 +4,7 @@ import Home from "./Home";
 import Reservation from "./Reservation";
 import SignUp from "./SignUp";
 import LogIn from "./LogIn";
+import Payment from "./Payment";
 import { Rooms, Gallery, About, Policies, NotFound } from "./pages/PublicPages";
 import TemplatePage from "./components/TemplatePage";
 import PreviewLayout from "./components/PreviewLayout";
@@ -23,6 +24,7 @@ export default function App() {
           <Route path="/reservation" element={<Reservation />} />
           <Route path="/signUp" element={<SignUp />} />
           <Route path="/logIn" element={<LogIn />} />
+          <Route path="/payment" element={<Payment />} />
 
           {/* Preview routes are separate from real account authentication. */}
           <Route path="/preview/guest" element={<PreviewLayout kind="guest" />}>
