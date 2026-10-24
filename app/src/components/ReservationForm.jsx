@@ -9,7 +9,6 @@ export default function ReservationForm() {
     const [id, setID] = useState(null)
     const [message, setMessage] = useState("");
     const [busy, setBusy] = useState(false);
-    const [cost, setCost] = useState(0);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -39,7 +38,7 @@ export default function ReservationForm() {
         }
         getID();
     }, [navigate]);
-    
+
 
     function getDaysInAdvance() {
         const today = new Date();
@@ -125,9 +124,16 @@ export default function ReservationForm() {
                 multiplier = 1.00;
                 break;
 
-            case "incentive":
-                multiplier = 0.80;
+            case "incentive": {
+                const occupancy = await calculateAverageOccupancy();
+
+                if (occupancy === null) {
+                    return null;
+                }
+                multiplier = occupancy <= 60 ? 0.80 : 1.00;
                 break;
+            }
+
             default:
                 return null;
         }
@@ -147,8 +153,6 @@ export default function ReservationForm() {
             bookingNights.reduce(
                 (total, night) => total + night.nightly_price, 0) * 100) / 100;
 
-        setCost(totalCost);
-
         return {
             totalCost,
             bookingNights
@@ -156,9 +160,54 @@ export default function ReservationForm() {
 
     }
 
+    async function calculateAverageOccupancy() {
+        const response = await supabase
+            .from("bookings")
+            .select("arrival_date, departure_date, status")
+            .lt("arrival_date", departure)
+            .gt("departure_date", arrival)
+            .in("status", ["pending", "confirmed"]);
+
+        if (response.error) {
+            setMessage(`Failed to retrieve occupancy: ${response.error.message}`);
+            return null;
+        }
+
+        const bookings = response.data ?? [];
+
+        const arrivalTime = Date.parse(arrival + "T00:00:00Z");
+        const departureTime = Date.parse(departure + "T00:00:00Z");
+
+        const numberOfNights =
+            (departureTime - arrivalTime) / (1000 * 60 * 60 * 24);
+
+        let totalReservedRooms = 0;
+
+        for (let i = 0; i < numberOfNights; i++) {
+            const stayDate = new Date(
+                arrivalTime + i * 24 * 60 * 60 * 1000
+            ).toISOString().split("T")[0];
+
+            const reservedRooms = bookings.filter((booking) =>
+                booking.arrival_date <= stayDate &&
+                booking.departure_date > stayDate
+            ).length;
+
+            totalReservedRooms += reservedRooms;
+        }
+
+        return (totalReservedRooms / numberOfNights / 45) * 100;
+    }
+
 
     async function handleCreateReservation(event) {
         event.preventDefault();
+        if (busy) {
+            return;
+        }
+
+        setMessage("");
+
         if (!confirmDayConditions()) {
             return;
         }
@@ -173,53 +222,61 @@ export default function ReservationForm() {
             setMessage("Please log in before making a reservation.");
             return;
         }
+        setBusy(true);
 
-        const result = await calculateReservationCost();
-        if (result === null) {
-            return;
+        try {
+            const result = await calculateReservationCost();
+            if (result === null) {
+                return;
+            }
+
+            const cost = result.totalCost;
+            const bookingNights = result.bookingNights;
+
+            if (reservationType === "prepaid") {
+                navigate("/payment", { state: { id, arrival, departure, cost, reservationType } })
+                return;
+            }
+
+            const response = await supabase
+                .from("bookings")
+                .insert({
+                    user_id: id,
+                    arrival_date: arrival,
+                    departure_date: departure,
+                    reservation_type: reservationType,
+                    status: "pending",
+                    total_cost: cost
+                })
+                .select()
+                .single();
+
+            if (response.error) {
+                setMessage(`Failed to create reservation: ${response.error.message}`);
+                return;
+            }
+
+            const nightsToInsert = bookingNights.map((night) => ({
+                ...night,
+                booking_id: response.data.id
+            }));
+
+            const { error: nightsError } = await supabase
+                .from("booking_nights")
+                .insert(nightsToInsert);
+
+            if (nightsError) {
+                setMessage(`Failed to save nightly prices: ${nightsError.message}`);
+                return;
+            }
+
+            setMessage("Reservation created");
+        } catch (error) {
+            setMessage(`An unexpected error occurred: ${error.message}`);
+
+        } finally {
+            setBusy(false);
         }
-
-        const cost = result.totalCost;
-        const bookingNights = result.bookingNights;
-
-        if (reservationType === "prepaid") {
-            navigate("/payment", { state: { id, arrival, departure, cost, reservationType } })
-            return;
-        }
-
-        const response = await supabase
-            .from("bookings")
-            .insert({
-                user_id: id,
-                arrival_date: arrival,
-                departure_date: departure,
-                reservation_type: reservationType,
-                status: "pending",
-                total_cost: cost
-            })
-            .select()
-            .single();
-
-        if (response.error) {
-            setMessage(`Failed to create reservation: ${response.error.message}`);
-            return;
-        }
-
-        const nightsToInsert = bookingNights.map((night) => ({
-            ...night,
-            booking_id: response.data.id
-        }));
-
-        const { error: nightsError } = await supabase
-            .from("booking_nights")
-            .insert(nightsToInsert);
-
-        if (nightsError) {
-            setMessage(`Failed to save nightly prices: ${nightsError.message}`);
-            return;
-        }
-
-        setMessage("Reservation created");
     }
 
     return (
