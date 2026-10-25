@@ -1,0 +1,289 @@
+
+// Test the ability for the software to print out report with given values set.
+
+printReport(parameters)
+
+// Test the ability for the software to change accomdation billing reports.
+
+changeAccBillReports(parameters?)
+
+// Test the ability for the software to recover a history of the accomadation report.
+
+returnHistOfAccReport(parameters?)
+
+// Test the ability for the software to display menu advise and help menu for the accomdation report.
+
+displayMenuAdviseHelpMenu(parameters?)
+
+// Test backup create for the software.
+
+createBackup()
+
+// Test backup dates for the software.
+// is this supposed to display the dates of the backups?
+
+// Test older backup history for the software.
+// How do you intend to test this? Is it supposed to display the older backup history in a list?
+
+// Test layout of the commandline environement for the software.
+// Are we making a separate thing for this? isn't it part of the IDE or the other software?
+
+// Test the ability to display help menu for the software.
+
+displayHelpMenu(parameters?)
+
+// Test the ability for the software to store new files.
+
+storeBackup(location?)
+
+// Test the ability for the software to delete old backups.
+
+deleteBackup(backup?)
+
+// Test the ability of the software to create a new booking entry.
+
+createBookingEntry()  // need parameters based on information on customer, room, date?
+
+// Test the ability of the software to delete a old booking entry.
+
+deleteBookingEntry(entry)
+
+// Test the ability of the software to move a booking entry.
+
+moveBookingEntry(entry, location?)
+
+// Test the ability of the software to schedule a new booking entry.
+
+scheduleBookingEntry()
+
+// Test the ability of the software to categorical organizes reservation and print them.
+// Categorical?
+
+// Test the ability of the software to categorical reserve a seat.
+// Categorical?
+
+// Test the ability of the software to catigorical move a reservation.
+// Categorical?
+
+// Test the ability of the software to catigorical delete a reservation.
+// Categorical?
+
+// Test the ability of the software to change the rate reported for testing.
+// Change the rate reported for testing? Clarify? Record the time for how long the testing function is?
+
+// Test the ability of the software to report the rate reported correctly in the testing environment.
+// To display the rate?
+
+// Test the ability of the software to report the data saving policies.
+
+reportDataSavingPolicy() //need parameters?
+
+// Test the abiliy of the software to change the data saving policies.
+
+changeDataSavingPolicy(policy)
+
+// Test the integrity of the data saving policies on the sandboxing of the system software.
+// Might need to research on that
+
+// Test the ability the software to enable accomdation within the platform.
+
+enableAccomdation()
+
+// Test the ability of the software to deleted accomdation on the platform.
+
+deleteAccomdation()
+
+// Test the testing environment to make sure it is able to interface will all the required modules for the program to run correctly.
+// Needs discussion on that
+
+// Test the ability of the software to use different forms of accomdation when they are enabled.
+// Discussion with group
+
+// Test speach to text.
+//Accessibility
+
+speechToText(audio?)
+
+// Test text to speach.
+
+textToSpeech(text?)
+
+// Test to send email confirmation reports to the users.
+
+sendConfirmationReport(user?)
+
+// Test to receive a confirmation report from users.
+
+receiveConfirmationReport(user?)
+
+// Test the systems to make sure it is displaying the correct confirmation report.
+
+displayConfirmationReport(report?)
+
+// Test the system to make sure it is displaying the correct date and time and user for the confirmation message.
+
+displayDateAndTime(confirmation message?)
+
+// Make sure SMPServer is running correct on the system deamon.
+// Discussion
+
+// Test the ability for the employee to create a report.
+
+createReport()
+
+// Test the ability for the employee to modify the report.
+
+modifyReport(report)
+
+// Test the ability for the employee to delete a report.
+
+deleteReport(report)
+
+// Test the software ability to display a logo.
+
+displayLogo()
+
+// Test the ability for the software to modify a logo for the user.
+
+modifyLogo(logo?)
+
+// Test the ability for the user to hid the logo.
+
+hideLogo()
+
+// Test the ability for the software to unhid the logo.
+
+showLogo()
+
+// Test the ability for the software to make a reservation.
+
+reserve()
+
+// Test the ability for the software to move a reservation.
+
+moveReserve(reserve)
+
+// Test the ability for the software to delete a reservation.
+
+deleteReserve(reserve)
+
+// Test the ability of the software to create a project report.
+
+createProjectReport()
+
+// Test the ability of the software to view a old project report.
+
+viewProjectReport(report)
+
+// Test the ability of the software to deleate a old project report.
+
+deleteProjectReport(report)
+
+// Test the ability of the software to modify a project report.  
+
+modifyProjectReport(report)
+
+// Test the ability of the software track the amount of supply of the product.
+
+trackSupply(product)
+
+// Test the ability of the software to delete the amount of supply of the product.
+
+deleteSupply(product)
+
+// Test the ability of the software to change the amount of supply of a product.
+
+changeSupply(product)
+
+// Test the ability of the software to add the amount of supply of the product to a list of the product supply.
+
+addSupply(product)
+
+// Test the ability of the software to manage a transaction.
+
+transaction()
+
+// Check the the ability of the software to add a new transaction to the transaction history.
+
+addNewTransaction()
+
+// Check the ability of the software to deleated a old transaction from the transaction history.
+
+deleteTransaction(transaction)
+
+// Check the ability of the software to modify a transaction on the transaction history.  
+
+modifyTransasction(transcation)
+
+// Check the ability of the software to connect to a peripherals external.
+// Research? kinda dumb myself - Sean
+
+// Check the ability of the software to read serially to the peripherals.
+
+// Check the ability of the software to write serially to the peripherals.
+
+// Check the ability of the software to disconnect serially from the peripherals.
+
+
+// Check the ability of the software to read the user profile.
+
+readUserProfile(userProfile)
+
+// Check the ability of the software to write to the user profile.
+
+writeUserProfile(userProfile)
+
+// Check the ability of the software to modify the user profile.
+
+modifyUserProfile(userProfile)
+
+// Check the ability of the software to deleate the user profile.  
+
+deleteUserProfile(userProfile)
+
+// Check the ability of the software to display a confirmation code for the QR.
+
+displayConfirmationCode()
+
+// Test the software ability to mimimize a currently displayed QR code.  
+
+minimizeQRCode(qrcode)
+
+// Test the ability of the software to record retainment testing.
+
+recordRetainment()
+
+// Test the ability of the software to modify retainment testing.
+
+modifyRetainment(retainment)
+
+// Test the ability of the software to deleate retainment testing.
+
+deleteRetainment(retainment)
+
+// Test the ability of the software to view retaimenent testing.  
+
+viewRetainment(retainment)
+
+// Test the ability of the software to change a reported reservation.
+
+changeReportedReservation(reservation)
+
+// Test the ability of the software to deleate a reported reservation.  
+
+deleteReportedReservation(reservation)
+
+// Test the ability of the software to report the pricing of a reservation.
+
+reportReservationPrice(reservation)
+
+// Test the ability of the software to change the pricing of a reservation.
+
+changePriceReservation(reservation)
+
+// Test the ability of the software to deleate the pricing of a reservation.
+
+deletePriceReservation(reservation)
+
+// Test the ability of the software to add a reported reservation pricing.  
+addReportedReservationPricing(reservation)
