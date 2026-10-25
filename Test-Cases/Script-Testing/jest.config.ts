@@ -125,11 +125,7 @@ const config: Config = {
   // restoreMocks: false,
 
   // The root directory that Jest should scan for tests and modules within
-<<<<<<< HEAD
-  rootDir: Ophelias-Oasis,
-=======
   rootDir: "Ophelias-Oasis",
->>>>>>> 064973c2943b6a838fc2e24de2de365c7743291c
 
   // A list of paths to directories that Jest should use to search for files in
   roots: [

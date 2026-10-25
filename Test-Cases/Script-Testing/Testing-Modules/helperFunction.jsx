@@ -132,11 +132,6 @@ function pageTest(pageName, functPointer) {
     // Return the value for testing the function.
     return testFunction;
 }
-<<<<<<< HEAD
-
-// Create a target variable for the data.
-let targetRootBuild = "";
-=======
 
 // Source: https://hatchjs.com/read-excel-in-react/.
 // Define a function for extracting a given function name out of the excel and return a list from it.  
@@ -242,4 +237,3 @@ function runTest(functionName, functionPointer) {
     // Return the data for the target.  
     return testOutput;
 }
->>>>>>> 064973c2943b6a838fc2e24de2de365c7743291c
