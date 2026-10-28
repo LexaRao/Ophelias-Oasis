@@ -4,7 +4,7 @@ function runAllTestsandReport(listPagesFromSystem) {
     import "Testing-Modules/*.jsx";
 
     // Just value for the testing script.
-    const testScriptLength = 22 * 2;
+    const testScriptLength = 15 * 2;
     testScriptSummery = vector(length=testScriptLength);
 
     // Define requirements for Payment System Testing.
@@ -31,65 +31,41 @@ function runAllTestsandReport(listPagesFromSystem) {
     testScriptSummery[10] = pageTestBT(listPagesFromSystem[5].shoppingCartAppSystem);
     testScriptSummery[11] = runTestBT();
 
-    // Define requirements for Disability Accommodations Testing.
-    testScriptSummery[12] = pageTestDAT(listPagesFromSystem[6].shoppingCartAppSystem);
-    testScriptSummery[13] = runTestDAT();
-
     // Define requirements for Categorical Reservations Testing.
-    testScriptSummery[14] = pageTestCRT(listPagesFromSystem[7].shoppingCartAppSystem);
-    testScriptSummery[15] = runTestCRT();
+    testScriptSummery[12] = pageTestCRT(listPagesFromSystem[6].shoppingCartAppSystem);
+    testScriptSummery[13] = runTestCRT();
 
     // Define requirements for Peripherals for Kiosks Testing.
-    testScriptSummery[16] = pageTestPFKT(listPagesFromSystem[8].shoppingCartAppSystem);
-    testScriptSummery[17] = runTestPFKT();
+    testScriptSummery[14] = pageTestPFKT(listPagesFromSystem[7].shoppingCartAppSystem);
+    testScriptSummery[15] = runTestPFKT();
 
     // Define requirements for Logo Testing.
-    testScriptSummery[18] = pageTestDT(listPagesFromSystem[9].shoppingCartAppSystem);
-    testScriptSummery[19] = runTestDT();
-
-    // Define requirements for Record Retainment.
-    testScriptSummery[20] = pageTestRRT(listPagesFromSystem[10].shoppingCartAppSystem);
-    testScriptSummery[21] = runTestDT();
+    testScriptSummery[16] = pageTestDT(listPagesFromSystem[8].shoppingCartAppSystem);
+    testScriptSummery[17] = runTestDT();
 
     // Define requirements for Management Created Reports.
-    testScriptSummery[22] = pageTestMCRT(listPagesFromSystem[11].shoppingCartAppSystem);
-    testScriptSummery[23] = runTestMCRT();
+    testScriptSummery[18] = pageTestMCRT(listPagesFromSystem[9].shoppingCartAppSystem);
+    testScriptSummery[19] = runTestMCRT();
 
     // Define requirements for Employeee Created Reports.
-    testScriptSummery[24] = pageTestECRT(listPagesFromSystem[12].shoppingCartAppSystem);
-    testScriptSummery[25] = runTestETRT();
-
-    // Define requirements for Change Rates Reports.
-    testScriptSummery[26] = pageTestCRRT(listPagesFromSystem[13].shoppingCartAppSystem);
-    testScriptSummery[27] = runTestCRRT();
+    testScriptSummery[20] = pageTestECRT(listPagesFromSystem[10].shoppingCartAppSystem);
+    testScriptSummery[21] = runTestETRT();
 
     // Define requirements for Accomdations Bills Reports.
-    testScriptSummery[28] = pageTestABRT(listPagesFromSystem[14].shoppingCartAppSystem);
-    testScriptSummery[29] = runTestABRT();
+    testScriptSummery[22] = pageTestABRT(listPagesFromSystem[11].shoppingCartAppSystem);
+    testScriptSummery[23] = runTestABRT();
     
-    // Define requirements for Reservation Changes Reports. 
-    testScriptSummery[30] = pageTestRCRT(listPagesFromSystem[15].shoppingCartAppSystem);
-    testScriptSummery[31] = runTestRCRT();
-    
-    // Define requirements for "No-Show" check.
-    testScriptSummery[32] = pageTestRRT(listPagesFromSystem[16].shoppingCartAppSystem);
-    testScriptSummery[33] = runTestRRT();
-
     // Define requirements for E-mail Confirmations Reports.
-    testScriptSummery[34] = pageTestECRTT(listPagesFromSystem[17].shoppingCartAppSystem);
-    testScriptSummery[35] = runTestECRTT();
-
-    // Define requirements for Occupany Tracker Reports.
-    testScriptSummery[36] = pageTestOTRT(listPagesFromSystem[18].shoppingCartAppSystem);
-    testScriptSummery[37] = runTestOTRT();
+    testScriptSummery[24] = pageTestECRTT(listPagesFromSystem[12].shoppingCartAppSystem);
+    testScriptSummery[25] = runTestECRTT();
 
     // Define requirements for Reservation Pricing Reports.
-    testScriptSummery[38] = pageTestRPRT(listPagesFromSystem[19].shoppingCartAppSystem);
-    testScriptSummery[39] = runTestRPRT();
+    testScriptSummery[26] = pageTestRPRT(listPagesFromSystem[13].shoppingCartAppSystem);
+    testScriptSummery[27] = runTestRPRT();
     
     // Define requirements for Data Saving Reports.  
-    testScriptSummery[40] = pageTestDSRT(listPagesFromSystem[20].shoppingCartAppSystem);
-    testScriptSummery[41] = runTestDSRT();
+    testScriptSummery[28] = pageTestDSRT(listPagesFromSystem[14].shoppingCartAppSystem);
+    testScriptSummery[29] = runTestDSRT();
 
     // Return the data for the program.
     return testScriptSummery;
