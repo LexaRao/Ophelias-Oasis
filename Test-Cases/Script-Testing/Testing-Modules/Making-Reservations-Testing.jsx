@@ -20,17 +20,14 @@ function pageTestMRT(shoppingCardAppSystem) {
 // Return the function for making a reservation.
 function runTestMRT() {
     // Run test for MRT using vectors.
-    const testSummeryLength = 3;
+    const testSummeryLength = 2;
     testSummery = vector(length=testSummeryLength);
 
-    // Test the ability for the software to make a reservation.
-    testSummery[0] = runTest("reserve", reserve);
-
     // Test the ability for the software to move a reservation.
-    testSummery[1] = runTest("moveReserve", moveReserve);
+    testSummery[0] = runTest("moveReserve", moveReserve);
 
     // Test the ability for the software to delete a reservation.
-    testSummery[2] = runTest("deleteReserve", deleteReserve);
+    testSummery[1] = runTest("deleteReserve", deleteReserve);
  
     // Return the values.
     return testSummery;

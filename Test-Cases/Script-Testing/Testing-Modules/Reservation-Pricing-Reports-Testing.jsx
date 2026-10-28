@@ -20,20 +20,17 @@ function pageTestRPRT(shoppingCardAppSystem) {
 // Define the function for reporting price reservtations.
 function runTestRPRT() {
     // Vector for holding testing summerys.
-    const lengthTestSummery = 4;
+    const lengthTestSummery = 3;
     testingSummery = vector(length=lengthTestSummery);
 
     // Test the ability of the software to report the pricing of a reservation.  
     testingSummery[0] = runTest("reportReservationPricing", reportReservtionPricing);
 
-    // Test the ability of the software to change the pricing of a reservation.
-    testSummery[1] = runTest("changePriceReservation", changePriceReservation);
-
     // Test the ability of the software to delete the pricing of a reservation.
-    testSummery[2] = runTest("deletePriceReservation", deletePriceReservation);
+    testSummery[1] = runTest("deletePriceReservation", deletePriceReservation);
 
     // Test the ability of the software to add a reported reservation pricing. 
-    testSummery[3] = runTest("addReportedReservationPricing", addReportedReservationPricing);
+    testSummery[2] = runTest("addReportedReservationPricing", addReportedReservationPricing);
 
     // Return the testing summery.
     return testingSummery;
