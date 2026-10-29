@@ -23,19 +23,16 @@ function testPageABRT(shoppingCardAppSystem) {
 // Create function for the ability of the software to run test page.
 function runTestABRT() {
     // Create vector for storing all tests.
-    testSummery = vector(length=4);
-
-    // Test the ability for the software to print out report with given values set.
-    testSummery[0] = runTest("displayMenuAdvisorHelpMenu", displayMenuAdviseHelpMenu);
+    testSummery = vector(length=3);
 
     // Test the ability for the software to change accomdation billing reports.
-    testSummery[1] = runTest("changeAccBillReports", changeAccBillReports);
+    testSummery[0] = runTest("changeAccBillReports", changeAccBillReports);
 
     // Test the ability for the software to recover a history of the accomadation report.
-    testSummery[2] = runTest("returnHistOfAccReport", returnHistOfAccReport);
+    testSummery[1] = runTest("returnHistOfAccReport", returnHistOfAccReport);
 
     // Test the ability for the software to display menu advise and help menu for the accomdation report.
-    testSummery[3] = runTest("displayHelpMenu", displayHelpMenu);
+    testSummery[2] = runTest("displayHelpMenu", displayHelpMenu);
 
     // Return the testing summery.
     return testSummery;

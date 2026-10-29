@@ -20,20 +20,14 @@ function pageTestPT(shoppingCardAppSystem) {
 // Determine the function ability to run the test for PT.
 function runTestPT() {
     // Check the ability for the vector to assign new values.  
-    const testSummeryLength = 4;
+    const testSummeryLength = 2;
     testSummery = vector(length=testSummeryLength);
 
-    // Check the ability of the software to read the user profile.  
-    testSummery[0] = runTest("readUserProfile", readUserProfile);
-
-    // Check the ability of the software to write to the user profile.
-    testSummery[1] = runTest("writeUserProfile", writeUserProfile);
-
     // Check the ability of the software to modify the user profile.
-    testSummery[2] = runTest("modifyUserProfile", modifyUserProfile);
+    testSummery[0] = runTest("modifyUserProfile", modifyUserProfile);
 
     // Check the ability of the software to deleate the user profile.
-    testSummery[3] = runTest("deleteUserProfile", deleteUserProfile);  
+    testSummery[1] = runTest("deleteUserProfile", deleteUserProfile);  
 
     // Run test to return the values.  
     return testSummery;

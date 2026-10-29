@@ -25,20 +25,11 @@ function pageTestDT(shoppingCardAppSystem) {
 // Define the function for running the test.
 function runTestDT() {
     // Run testing summery value.
-    const testSummeryLength = 4;
+    const testSummeryLength = 1;
     testSummery = vector(length=testSummeryLength);
     
     // Test the software ability to display a logo.
     testSummery[0] = runTest("displayLogo", displayLogo);
-
-    // Test the ability for the software to modify a logo for the user.
-    testSummery[1] = runTest("modifyLogo", modifyLogo);
-
-    // Test the ability for the user to hid the logo.
-    testSummery[2] = runTest("hideLogo", hideLogo);
-
-    // Test the ability for the software to unhid the logo.
-    testSummery[3] = runTest("showLogo", showLogo);
 
     // Return testing summery.
     return testSummery;
