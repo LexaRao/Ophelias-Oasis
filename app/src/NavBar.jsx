@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
+import OOLogo from './assets/OpheliasOasisLogo.svg';
 import "./NavBar.css";
 
 export default function NavBar() {
@@ -13,6 +14,7 @@ export default function NavBar() {
         Skip to content
       </a>
       <header className="navbar">
+        <img src={myIcon} alt="My Description" width="200" height="200" />
         <Link className="brand" to="/">
           Ophelia’s Oasis
         </Link>
