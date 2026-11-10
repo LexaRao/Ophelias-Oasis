@@ -39,10 +39,11 @@ export default function LogIn() {
     <div className="page">
       <p className="eyebrow">Account access</p>
       <h1>Log in</h1>
-      <p>Sign in to your existing account with Supabase.</p>
-      <p className="purpose-note">
-        One login for guests and staff. Dashboard routing will be added later.
-      </p>
+      {!supabase && (
+        <p className="demo-notice">
+          Live login is offline. Explore with a demo account.
+        </p>
+      )}
       <form className="card auth-form" onSubmit={handleLogIn}>
         <label>
           Email
@@ -64,13 +65,18 @@ export default function LogIn() {
             required
           />
         </label>
-        <button disabled={busy}>{busy ? "Logging in…" : "Log In"}</button>
+        <button disabled={busy || !supabase}>
+          {busy ? "Logging in…" : "Log in"}
+        </button>
         <p role="alert">{message}</p>
-        <p>
-          This form uses real authentication. To explore without an account, use{" "}
-          <Link to="/preview/guest">Guest Preview</Link> or{" "}
-          <Link to="/preview/staff">Staff Preview</Link>.
-        </p>
+        <div className="button-row">
+          <Link className="button secondary" to="/preview/guest">
+            Guest demo
+          </Link>
+          <Link className="button secondary" to="/preview/staff">
+            Staff demo
+          </Link>
+        </div>
         <Link to="/signUp">Create an account</Link>
       </form>
     </div>

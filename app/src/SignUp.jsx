@@ -55,12 +55,11 @@ export default function SignUp() {
     <div className="page">
       <p className="eyebrow">Account access</p>
       <h1>Create an account</h1>
-      <p>
-        Create a guest account using the team’s existing Supabase signup flow.
-      </p>
-      <p className="purpose-note">
-        This is the existing signup form. Account setup will be refined later.
-      </p>
+      {!supabase && (
+        <p className="demo-notice">
+          Account creation is offline. You can still explore the guest demo.
+        </p>
+      )}
       <form className="card auth-form" onSubmit={handleSignUp}>
         <label>
           Email
@@ -100,13 +99,12 @@ export default function SignUp() {
             onChange={(event) => setLastName(event.target.value)}
           />
         </label>
-        <button disabled={busy}>
+        <button disabled={busy || !supabase}>
           {busy ? "Creating account…" : "Sign Up"}
         </button>
         <p role="alert">{message}</p>
         <p>
-          To explore without creating an account, use{" "}
-          <Link to="/preview/guest">Guest Preview</Link>.
+          <Link to="/preview/guest">Explore the guest demo ↗</Link>
         </p>
         <Link to="/logIn">Already have an account? Log in</Link>
       </form>

@@ -24,3 +24,8 @@ dist-ssr
 *.sw?
 
 .env.local
+
+# Keep personal website notes local.
+*.md
+!README.md
+!IMAGE_CREDITS.md
