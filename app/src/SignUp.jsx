@@ -1,6 +1,10 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { supabase } from "./supabaseClient";
+import { useAuth } from "./auth/AuthContext";
+import AuthContinue from "./auth/AuthContinue";
+import AccountStatus from "./auth/AccountStatus";
+import { authLink } from "./auth/destinations";
 
 export default function SignUp() {
   const [email, setEmail] = useState("");
@@ -10,6 +14,9 @@ export default function SignUp() {
   const [message, setMessage] = useState("");
   const [busy, setBusy] = useState(false);
   const navigate = useNavigate();
+  const { user, loading } = useAuth();
+  const [search] = useSearchParams();
+  const next = search.get("next");
 
   async function handleSignUp(event) {
     event.preventDefault();
@@ -38,19 +45,21 @@ export default function SignUp() {
       });
       if (profileResponse.error) {
         setMessage(
-          "The signup request was processed, but the profile could not be saved. Check your email for confirmation, then contact the team before retrying.",
+          "Your account was created, but your details could not be saved. Please contact the team before trying again.",
         );
         return;
       }
-      navigate("/reservation");
+      navigate(authLink("/auth/continue", next), { replace: true });
     } catch {
       setMessage(
-        "Unable to complete signup. Check your email for confirmation before trying again.",
+        "Unable to complete signup. Please try logging in before creating the account again.",
       );
     } finally {
       setBusy(false);
     }
   }
+  if (!busy && !message && user) return <AuthContinue />;
+  if (!busy && loading) return <AccountStatus />;
   return (
     <div className="page">
       <p className="eyebrow">Account access</p>
@@ -106,7 +115,9 @@ export default function SignUp() {
         <p>
           <Link to="/preview/guest">Explore the guest demo ↗</Link>
         </p>
-        <Link to="/logIn">Already have an account? Log in</Link>
+        <Link to={authLink("/logIn", next)}>
+          Already have an account? Log in
+        </Link>
       </form>
     </div>
   );

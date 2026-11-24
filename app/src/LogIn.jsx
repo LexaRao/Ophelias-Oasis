@@ -1,6 +1,10 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { supabase } from "./supabaseClient";
+import { useAuth } from "./auth/AuthContext";
+import AuthContinue from "./auth/AuthContinue";
+import AccountStatus from "./auth/AccountStatus";
+import { authLink } from "./auth/destinations";
 
 export default function LogIn() {
   const [email, setEmail] = useState("");
@@ -8,6 +12,9 @@ export default function LogIn() {
   const [message, setMessage] = useState("");
   const [busy, setBusy] = useState(false);
   const navigate = useNavigate();
+  const { user, loading } = useAuth();
+  const [search] = useSearchParams();
+  const next = search.get("next");
 
   async function handleLogIn(event) {
     event.preventDefault();
@@ -28,13 +35,15 @@ export default function LogIn() {
         setMessage(response.error.message);
         return;
       }
-      navigate("/reservation");
+      navigate(authLink("/auth/continue", next), { replace: true });
     } catch {
       setMessage("Unable to connect. Please try again.");
     } finally {
       setBusy(false);
     }
   }
+  if (!busy && !message && user) return <AuthContinue />;
+  if (!busy && loading) return <AccountStatus />;
   return (
     <div className="page">
       <p className="eyebrow">Account access</p>
@@ -77,7 +86,7 @@ export default function LogIn() {
             Staff demo
           </Link>
         </div>
-        <Link to="/signUp">Create an account</Link>
+        <Link to={authLink("/signUp", next)}>Create an account</Link>
       </form>
     </div>
   );

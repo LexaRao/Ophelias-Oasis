@@ -1,10 +1,33 @@
 import { useEffect, useState } from "react";
-import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
+import {
+  Link,
+  NavLink,
+  Outlet,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
+import { useAuth } from "./auth/AuthContext";
 import "./NavBar.css";
 
 export default function NavBar() {
   const { pathname } = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [logoutBusy, setLogoutBusy] = useState(false);
+  const [logoutError, setLogoutError] = useState("");
+  const { user, isStaff, signOut } = useAuth();
+  const navigate = useNavigate();
+  async function handleLogout() {
+    setLogoutBusy(true);
+    setLogoutError("");
+    try {
+      await signOut();
+      navigate("/", { replace: true });
+    } catch {
+      setLogoutError("Unable to log out. Please try again.");
+    } finally {
+      setLogoutBusy(false);
+    }
+  }
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
@@ -35,18 +58,35 @@ export default function NavBar() {
             ["/rooms", "The rooms"],
             ["/gallery", "Gallery"],
             ["/about", "Our oasis"],
-            ["/logIn", "My stay"],
           ].map(([to, label]) => (
             <NavLink key={to} to={to}>
               {label}
             </NavLink>
           ))}
-          <Link className="button" to="/reservation">
-            Book a stay <span aria-hidden="true">↗</span>
+          {!isStaff && (
+            <NavLink to={user ? "/guest" : "/logIn"}>My stay</NavLink>
+          )}
+          <Link className="button" to={isStaff ? "/staff" : "/reservation"}>
+            {isStaff ? "Staff Dashboard" : "Book a stay"}{" "}
+            <span aria-hidden="true">↗</span>
           </Link>
+          {user && (
+            <button
+              className="text-button"
+              disabled={logoutBusy}
+              onClick={handleLogout}
+            >
+              {logoutBusy ? "Logging out…" : "Log out"}
+            </button>
+          )}
         </nav>
       </header>
       <main id="main-content" tabIndex={-1}>
+        {logoutError && (
+          <p className="form-message" role="alert">
+            {logoutError}
+          </p>
+        )}
         <Outlet />
       </main>
       <footer className="site-footer">

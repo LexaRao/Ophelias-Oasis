@@ -1,11 +1,15 @@
 import { useState, useEffect } from "react";
 import { supabase } from "../supabaseClient";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 export default function ReservationForm() {
-    const [arrival, setArrival] = useState("");
-    const [departure, setDeparture] = useState("");
-    const [reservationType, setReservationType] = useState("");
+    const [search] = useSearchParams();
+    const [arrival, setArrival] = useState(search.get("arrival") || "");
+    const [departure, setDeparture] = useState(search.get("departure") || "");
+    const [reservationType, setReservationType] = useState(
+        ["prepaid", "sixty_day", "conventional", "incentive"].includes(search.get("plan"))
+            ? search.get("plan") : "",
+    );
     const [id, setID] = useState(null)
     const [message, setMessage] = useState("");
     const [busy, setBusy] = useState(false);
