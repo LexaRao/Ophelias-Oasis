@@ -4,7 +4,7 @@ function runAllTestsandReport(listPagesFromSystem) {
     import "Testing-Modules/*.jsx";
 
     // Just value for the testing script.
-    const testScriptLength = 15 * 2;
+    const testScriptLength = 16 * 2;
     testScriptSummery = vector(length=testScriptLength);
 
     // Define requirements for Payment System Testing.
@@ -66,6 +66,10 @@ function runAllTestsandReport(listPagesFromSystem) {
     // Define requirements for Data Saving Reports.  
     testScriptSummery[28] = pageTestDSRT(listPagesFromSystem[14].shoppingCartAppSystem);
     testScriptSummery[29] = runTestDSRT();
+
+    // Define the test case for the scale of the reservation.
+    testScriptSummery[30] = pageTestRST(listPagesFromSystem[15].shoppingCartAppSystem);
+    testScriptSummery[31] = runTestRST();
 
     // Return the data for the program.
     return testScriptSummery;

@@ -26,7 +26,7 @@ function pageNameMCRT(shoppingCardAppSystem) {
 // Return the proper function data.
 function runTestMCRT() {
     // Test function for creating the vector function.
-    const testSummeryLength = 3;
+    const testSummeryLength = 4;
     testSummery = vector(length=testSummeryLength);
 
     // Test the ability of the software to create a project report.
@@ -35,9 +35,11 @@ function runTestMCRT() {
     // Test the ability of the software to view a old project report.
     testSummery[1] = runTest("viewProjectReport", viewProjectReport);
 
-    // Test the ability of the software to deleate a old project report.
+    // Test the ability of the software to delete a old project report.
+    testSummery[2] = runTest("deleteProjectReport", deleteProjectReport)
+
     // Test the ability of the software to modify a project report.
-    testSummery[2] = runTest("modifyProjectReport", modifyProjectReport);
+    testSummery[3] = runTest("modifyProjectReport", modifyProjectReport);
     
     // Return the value for the report.
     return testSummery;
