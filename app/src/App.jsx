@@ -29,6 +29,8 @@ import AuthProvider from "./auth/AuthProvider";
 import ProtectedRoute from "./auth/ProtectedRoute";
 import AuthContinue from "./auth/AuthContinue";
 import AccountDashboard from "./pages/AccountDashboard";
+import PaymentSuccess from "./pages/PaymentSuccess";
+import PaymentCancelled from "./pages/PaymentCancelled";
 import "./App.css";
 
 export default function App() {
@@ -47,6 +49,8 @@ export default function App() {
                 <Route path="/reservation" element={<Reservation />} />
                 <Route path="/payment" element={<Payment />} />
               </Route>
+              <Route path="/payment-success" element={<PaymentSuccess />}/>
+              <Route path="/payment-cancelled" element={<PaymentCancelled />}/>
               <Route element={<ProtectedRoute role="guest" />}>
                 <Route path="/guest" element={<AccountDashboard />} />
               </Route>

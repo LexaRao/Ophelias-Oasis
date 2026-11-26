@@ -237,11 +237,6 @@ export default function ReservationForm() {
             const cost = result.totalCost;
             const bookingNights = result.bookingNights;
 
-            if (reservationType === "prepaid") {
-                navigate("/payment", { state: { id, arrival, departure, cost, reservationType } })
-                return;
-            }
-
             const response = await supabase
                 .from("bookings")
                 .insert({
@@ -273,6 +268,22 @@ export default function ReservationForm() {
                 setMessage(`Failed to save nightly prices: ${nightsError.message}`);
                 return;
             }
+
+            if (reservationType === "prepaid") {
+            navigate("/payment", {
+                state: {
+                    live: true,
+                    bookingId: response.data.id,
+                    id,
+                    arrival,
+                    departure,
+                    amount: cost,
+                    reservationType
+                }
+            });
+
+    return;
+}
 
             setMessage("Reservation created");
         } catch (error) {
