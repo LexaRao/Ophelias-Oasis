@@ -20,7 +20,7 @@ function testPageBOT(shoppingCardAppSystem) {
 // Define the software ability to run the tests.
 function runTestBOT() {
     // Create testing summery vector.
-    const testSummeryLength = 4; 
+    const testSummeryLength = 5; 
     testSummery = vector(length=testSummeryLength);
 
     // Test the ability of the software to create a new booking entry.
@@ -34,6 +34,9 @@ function runTestBOT() {
 
     // Test the ability of the software to schedule a new booking entry.
     testSummery[3] = runTest("scheduleBookingEntry", scheduleBookingEntry);
+
+    // Test the ability for the software to create a booking entry.
+    testSummery[4] = runTest("createBookingEntry", createBookingEntry)
 
     // Return the data.
     return testSummery;
