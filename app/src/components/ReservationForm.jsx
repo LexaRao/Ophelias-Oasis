@@ -270,20 +270,25 @@ export default function ReservationForm() {
             }
 
             if (reservationType === "prepaid") {
-            navigate("/payment", {
-                state: {
-                    live: true,
-                    bookingId: response.data.id,
-                    id,
-                    arrival,
-                    departure,
-                    amount: cost,
-                    reservationType
-                }
-            });
+                navigate("/payment", {
+                    state: {
+                        live: true,
+                        bookingId: response.data.id,
+                        id,
+                        arrival,
+                        departure,
+                        amount: cost,
+                        reservationType
+                    }
+                });
 
-    return;
-}
+                if (reservationType === "sixty_day") {
+                    navigate("/");
+                    return;
+                }
+
+                return;
+            }
 
             setMessage("Reservation created");
         } catch (error) {

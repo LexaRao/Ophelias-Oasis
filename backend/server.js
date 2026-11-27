@@ -1,6 +1,8 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
+import "./jobs/sixtyDayReservationJob.js";
+import "./jobs/cancelUnpaidReservations.js";
 
 import paymentRoutes from "./routes/paymentRoutes.js";
 
