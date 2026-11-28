@@ -3,6 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import "./jobs/sixtyDayReservationJob.js";
 import "./jobs/cancelUnpaidReservations.js";
+import "./jobs/departurePaymentJob.js";
 
 import paymentRoutes from "./routes/paymentRoutes.js";
 

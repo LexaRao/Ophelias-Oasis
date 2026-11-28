@@ -282,11 +282,40 @@ export default function ReservationForm() {
                     }
                 });
 
-                if (reservationType === "sixty_day") {
-                    navigate("/");
-                    return;
+                return;
+            }
+
+            if (reservationType === "conventional" || reservationType === "incentive") {
+
+                const { data: sessionData } = await supabase.auth.getSession();
+
+                const setUpResponse = await fetch(
+                    "http://localhost:5000/api/payments/create-card-setup",
+                    {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                            "Authorization": `Bearer ${sessionData.session.access_token}`
+                        },
+                        body: JSON.stringify({
+                            reservationId: response.data.id
+                        })
+                    }
+                );
+
+                const data = await setUpResponse.json();
+
+                if (!setUpResponse.ok) {
+                    throw new Error(data.error);
                 }
 
+                window.location.href = data.url;
+                return;
+            }
+
+
+            if (reservationType === "sixty_day") {
+                navigate("/");
                 return;
             }
 
